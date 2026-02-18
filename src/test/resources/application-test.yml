@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb;MODE=MySQL;DB_CLOSE_DELAY=-1
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+
+app:
+  jwt:
+    secret: test-secret-key-for-jwt-hs256-at-least-256-bits-long-for-testing-only-do-not-use-in-production
+    access-token-expiration-ms: 900000
+    refresh-token-expiration-ms: 604800000
+    issuer: jwt-auth-api-test
+
+logging:
+  level:
+    com.upadhyay.jwtauth: DEBUG
+    org.hibernate.SQL: WARN
